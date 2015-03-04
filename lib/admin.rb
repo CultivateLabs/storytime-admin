@@ -2,10 +2,11 @@ require "admin/engine"
 
 module Admin
   class << self
-    mattr_accessor :nav_title, :models, :user_class
+    mattr_accessor :nav_title, :models, :user_class, :layout
     @@nav_title = "Admin"
     @@models = []
     @@user_class = "User"
+    @@layout = "application"
   end
 
   def self.configure(&block)
