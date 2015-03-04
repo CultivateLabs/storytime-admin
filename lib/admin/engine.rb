@@ -1,6 +1,8 @@
 require 'haml-rails'
 require 'sass-rails'
 require 'font-awesome-sass'
+require 'coffee-rails'
+require 'jquery-rails'
 require 'devise'
 require 'simple_form'
 require 'leather'

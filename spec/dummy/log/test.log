@@ -7678,3 +7678,1083 @@ Processing by Admin::HomeController#index as HTML
   Rendered application/_flashes.html.haml (0.9ms)
 Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user1@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["admin", "t"], ["created_at", "2015-03-04 15:42:57.423653"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$acbapSvG4M/jBBfYH8aWt.ENnLPpFv0GfqvANBXEDn8R70kU9t51K"], ["updated_at", "2015-03-04 15:42:57.423653"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (34.5ms)
+  Rendered application/_flashes.html.haml (1.8ms)
+Completed 200 OK in 89ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'user1@example.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2015-03-04 15:42:57.596327"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 15:42:57.596327"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 15:42:57.597382"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 21ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.6ms)
+  Rendered application/_flashes.html.haml (1.4ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.633112"], ["title", "Widget 1"], ["updated_at", "2015-03-04 15:42:57.633112"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.635337"], ["title", "Widget 2"], ["updated_at", "2015-03-04 15:42:57.635337"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.637005"], ["title", "Widget 3"], ["updated_at", "2015-03-04 15:42:57.637005"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.2ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (1.7ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (5.9ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (13.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (23.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (1.3ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT "widgets".* FROM "widgets"[0m
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 15:42:57.696152"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$5HTaE32BUGS8dho/9B7Gkuu.U.GTa6NCznonysDj5Ag5OmKgPRw66"], ["updated_at", "2015-03-04 15:42:57.696152"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user2@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user2@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 15:42:57.714823"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 15:42:57.714823"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 15:42:57.715606"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/admin/widgets/new" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered admin/widgets/_fields.html.haml (7.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (55.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/new.html.haml within layouts/application (61.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+Started POST "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Create Widget"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.803175"], ["title", "Title"], ["updated_at", "2015-03-04 15:42:57.803175"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user3@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 15:42:57.820155"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$eEDD3Z/3gz1Z3sg2Q7QpvOIKTxK189qvCCph73NU09uGEhXdNzXz6"], ["updated_at", "2015-03-04 15:42:57.820155"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user3@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user3@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 15:42:57.838716"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 15:42:57.838716"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 15:42:57.839140"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.847005"], ["title", "Widget 4"], ["updated_at", "2015-03-04 15:42:57.847005"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets/1/edit" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/widgets/_fields.html.haml (4.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (6.7ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/edit.html.haml within layouts/application (11.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+Started PATCH "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"New Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Update Widget", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.0ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "widgets" SET "title" = ?, "updated_at" = ? WHERE "widgets"."id" = 1  [["title", "New Title"], ["updated_at", "2015-03-04 15:42:57.877011"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.1ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 15:42:57.895609"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$kHG64aphXkPFvWoyYjAvB.AC.JqLM/EvYe31zbM3LUpvzaMHKdUEm"], ["updated_at", "2015-03-04 15:42:57.895609"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user4@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user4@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 15:42:57.912313"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 15:42:57.912313"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 15:42:57.912689"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.919762"], ["title", "Widget 5"], ["updated_at", "2015-03-04 15:42:57.919762"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.5ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (1.1ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (2.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (4.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+Started DELETE "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "widgets" WHERE "widgets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (4.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.3ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user5@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "f"], ["created_at", "2015-03-04 15:42:57.955822"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$MKf9R8CT4a6Rb6O4o61jLecXogMeuJyJ2le2fVmKe8PdP/7wfP6nm"], ["updated_at", "2015-03-04 15:42:57.955822"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user5@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user5@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 15:42:57.974192"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 15:42:57.974192"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 15:42:57.974828"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 15:42:57.983392"], ["title", "Widget 6"], ["updated_at", "2015-03-04 15:42:57.983392"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Filter chain halted as :ensure_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 09:42:57 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user1@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["admin", "t"], ["created_at", "2015-03-04 16:01:24.450289"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$StGKzxPa38iYt8enmd.h1OCMoHrAOZ7t8syB9QYdiu7.VfYYeBtS2"], ["updated_at", "2015-03-04 16:01:24.450289"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (33.4ms)
+  Rendered application/_flashes.html.haml (2.0ms)
+Completed 200 OK in 103ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'user1@example.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2015-03-04 16:01:24.609843"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:01:24.609843"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:01:24.610992"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 22ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.4ms)
+  Rendered application/_flashes.html.haml (0.6ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:24.645190"], ["title", "Widget 1"], ["updated_at", "2015-03-04 16:01:24.645190"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:24.647285"], ["title", "Widget 2"], ["updated_at", "2015-03-04 16:01:24.647285"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:24.648311"], ["title", "Widget 3"], ["updated_at", "2015-03-04 16:01:24.648311"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (1.7ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (5.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (12.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (22.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (2.7ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+  [1m[36mWidget Load (0.2ms)[0m  [1mSELECT "widgets".* FROM "widgets"[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:01:24.713055"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$nf.YCFcPe2ommhjgiY1XZeojom7ckddYZrfrYNwBHL9.Fe8BRpF6W"], ["updated_at", "2015-03-04 16:01:24.713055"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user2@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user2@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:01:24.729580"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:01:24.729580"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:01:24.729973"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started GET "/admin/widgets/new" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered admin/widgets/_fields.html.haml (7.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (58.5ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/new.html.haml within layouts/application (65.9ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 74ms (Views: 71.2ms | ActiveRecord: 0.3ms)
+Started POST "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Create Widget"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:24.821800"], ["title", "Title"], ["updated_at", "2015-03-04 16:01:24.821800"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.5ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (1.1ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (2.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (5.1ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user3@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:01:24.841997"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$1g95Hm8RWjgYi76MxDDox.X4meulQC4w2niB.29asRYoAuSSRfQ0W"], ["updated_at", "2015-03-04 16:01:24.841997"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user3@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user3@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:01:24.859977"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:01:24.859977"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:01:24.860347"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:24.867400"], ["title", "Widget 4"], ["updated_at", "2015-03-04 16:01:24.867400"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets/1/edit" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/widgets/_fields.html.haml (4.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (6.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/edit.html.haml within layouts/application (10.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+Started PATCH "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"New Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Update Widget", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "widgets" SET "title" = ?, "updated_at" = ? WHERE "widgets"."id" = 1  [["title", "New Title"], ["updated_at", "2015-03-04 16:01:24.897791"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (0.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.2ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:01:24.915546"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$kIIOF3AlBo9Rjl4uwIieaOH7cWyuHJnLCrYOZ1IyEDptNm7LfXSnu"], ["updated_at", "2015-03-04 16:01:24.915546"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered application/_flashes.html.haml (0.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user4@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user4@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:01:24.933749"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:01:24.933749"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:01:24.934143"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:24.943523"], ["title", "Widget 5"], ["updated_at", "2015-03-04 16:01:24.943523"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.5ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+Started DELETE "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "widgets" WHERE "widgets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (0.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (2.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user5@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "f"], ["created_at", "2015-03-04 16:01:24.980428"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$Sck0p/2e1msaE5d6HcYIY.H.2Y3bq.5DdL2FJCP3jT2nbZLKNYB7C"], ["updated_at", "2015-03-04 16:01:24.980428"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:01:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user5@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user5@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:01:24.996411"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:01:24.996411"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:01:24.996815"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:01:25 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.6ms)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:01:25.005905"], ["title", "Widget 6"], ["updated_at", "2015-03-04 16:01:25.005905"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:01:25 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Filter chain halted as :ensure_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:01:25 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.8ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user1@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["admin", "t"], ["created_at", "2015-03-04 16:03:23.981557"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$tl3BYvI4RLqHiKsCJa442e0EYlbm7TQ5OqMgyYrwZGoO//1SCn5LS"], ["updated_at", "2015-03-04 16:03:23.981557"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:23 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (59.2ms)
+  Rendered application/_flashes.html.haml (1.7ms)
+Completed 200 OK in 115ms (Views: 96.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'user1@example.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2015-03-04 16:03:24.138192"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:03:24.138192"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:03:24.139247"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 23ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.6ms)
+  Rendered application/_flashes.html.haml (0.6ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.176185"], ["title", "Widget 1"], ["updated_at", "2015-03-04 16:03:24.176185"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.178007"], ["title", "Widget 2"], ["updated_at", "2015-03-04 16:03:24.178007"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.178979"], ["title", "Widget 3"], ["updated_at", "2015-03-04 16:03:24.178979"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.2ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (1.6ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (5.7ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (11.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (21.7ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (1.3ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT "widgets".* FROM "widgets"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:03:24.237403"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$QKBZb8XjehuWPW8DF.rGgucf/ec9u6xC2vCCYDf9XRjNnfHaxsOge"], ["updated_at", "2015-03-04 16:03:24.237403"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user2@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user2@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:03:24.253247"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:03:24.253247"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:03:24.254104"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/admin/widgets/new" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered admin/widgets/_fields.html.haml (7.1ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (49.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/new.html.haml within layouts/application (56.5ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 63ms (Views: 61.4ms | ActiveRecord: 0.1ms)
+Started POST "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Create Widget"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.335002"], ["title", "Title"], ["updated_at", "2015-03-04 16:03:24.335002"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user3@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:03:24.353543"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$XlGYIzJlTeCmkvJGddtHouq6Odc76LHq6oEA.vQlxIYYLY3wQuRHi"], ["updated_at", "2015-03-04 16:03:24.353543"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user3@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user3@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:03:24.369273"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:03:24.369273"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:03:24.369640"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.376431"], ["title", "Widget 4"], ["updated_at", "2015-03-04 16:03:24.376431"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets/1/edit" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/widgets/_fields.html.haml (4.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (6.7ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/edit.html.haml within layouts/application (10.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+Started PATCH "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"New Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Update Widget", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.0ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "widgets" SET "title" = ?, "updated_at" = ? WHERE "widgets"."id" = 1  [["title", "New Title"], ["updated_at", "2015-03-04 16:03:24.407379"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:03:24.425487"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$AThyZCFRugBxiPum26A4AO6w7aaQBfd0TWutkS.E9XoMywFtpziCq"], ["updated_at", "2015-03-04 16:03:24.425487"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered application/_flashes.html.haml (0.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user4@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user4@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:03:24.443296"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:03:24.443296"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:03:24.443660"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.450791"], ["title", "Widget 5"], ["updated_at", "2015-03-04 16:03:24.450791"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (1.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (3.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (6.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+Started DELETE "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "widgets" WHERE "widgets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (2.2ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user5@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "f"], ["created_at", "2015-03-04 16:03:24.484104"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$LtYSUVsNkPPxlaPFCk4FmuKQr8HTv8e2eAAXxk3cZ5C2yfrKj4gRO"], ["updated_at", "2015-03-04 16:03:24.484104"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.8ms)
+  Rendered application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user5@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user5@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:03:24.501228"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:03:24.501228"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:03:24.501642"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:03:24.508670"], ["title", "Widget 6"], ["updated_at", "2015-03-04 16:03:24.508670"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Filter chain halted as :ensure_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:03:24 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.8ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user1@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["admin", "t"], ["created_at", "2015-03-04 16:21:55.976790"], ["email", "user1@example.com"], ["encrypted_password", "$2a$04$b/Veg8.BlZ4wPKutwjE5U.DyWoyeOO9Z6lkmcF1m5GrS9Y9p4gyb6"], ["updated_at", "2015-03-04 16:21:55.976790"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:55 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (33.3ms)
+  Rendered application/_flashes.html.haml (1.8ms)
+Completed 200 OK in 85ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user1@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'user1@example.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2015-03-04 16:21:56.115171"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:21:56.115171"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:21:56.116349"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 23ms (ActiveRecord: 1.5ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.4ms)
+  Rendered application/_flashes.html.haml (0.6ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.154690"], ["title", "Widget 1"], ["updated_at", "2015-03-04 16:21:56.154690"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.157129"], ["title", "Widget 2"], ["updated_at", "2015-03-04 16:21:56.157129"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.158398"], ["title", "Widget 3"], ["updated_at", "2015-03-04 16:21:56.158398"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (1.6ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (5.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (12.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (26.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (2.5ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 0.4ms)
+  [1m[36mWidget Load (0.2ms)[0m  [1mSELECT "widgets".* FROM "widgets"[0m
+  [1m[35m (1.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user2@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:21:56.232285"], ["email", "user2@example.com"], ["encrypted_password", "$2a$04$yw.AVqFE/l5.9w8z8LW/O.s2.wFNatV7kQzDfYzaRSx/4GCVG/x.a"], ["updated_at", "2015-03-04 16:21:56.232285"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user2@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user2@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:21:56.251246"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:21:56.251246"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:21:56.251782"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started GET "/admin/widgets/new" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered admin/widgets/_fields.html.haml (7.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (50.9ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/new.html.haml within layouts/application (58.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.1ms)
+Started POST "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Create Widget"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.337619"], ["title", "Title"], ["updated_at", "2015-03-04 16:21:56.337619"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (1.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user3@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:21:56.355032"], ["email", "user3@example.com"], ["encrypted_password", "$2a$04$rlcliP.fqur3OHEjj86WwOQGil18O3vJgzHDzow3y3FWylB1HRCc."], ["updated_at", "2015-03-04 16:21:56.355032"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user3@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user3@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:21:56.374419"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:21:56.374419"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:21:56.374804"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.1ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.382192"], ["title", "Widget 4"], ["updated_at", "2015-03-04 16:21:56.382192"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets/1/edit" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/widgets/_fields.html.haml (4.4ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_form.html.haml (6.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/edit.html.haml within layouts/application (10.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.3ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+Started PATCH "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "widget"=>{"title"=>"New Title", "content"=>"Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."}, "commit"=>"Update Widget", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "widgets" SET "title" = ?, "updated_at" = ? WHERE "widgets"."id" = 1  [["title", "New Title"], ["updated_at", "2015-03-04 16:21:56.413477"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0[0m
+  Rendered admin/widgets/_row.html.haml (0.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.8ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (1.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "widgets"
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (3.1ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[36mWidget Load (0.1ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user4@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "t"], ["created_at", "2015-03-04 16:21:56.431947"], ["email", "user4@example.com"], ["encrypted_password", "$2a$04$rxrMyF3oDghVVK6z6TEXx.tP14xr5msl7vGMeN7OOHeX9QqIEAJFe"], ["updated_at", "2015-03-04 16:21:56.431947"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user4@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user4@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:21:56.447750"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:21:56.447750"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:21:56.448141"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.455230"], ["title", "Widget 5"], ["updated_at", "2015-03-04 16:21:56.455230"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered admin/widgets/_row.html.haml (0.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (1.6ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (3.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (6.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+Started DELETE "/admin/widgets/1" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mWidget Load (0.0ms)[0m  [1mSELECT  "widgets".* FROM "widgets"  WHERE "widgets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "widgets" WHERE "widgets"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/widgets
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mWidget Load (0.1ms)[0m  SELECT  "widgets".* FROM "widgets"  LIMIT 20 OFFSET 0
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_object.html.haml (0.0ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_table.html.haml (0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "widgets"[0m
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/index.html.haml within layouts/application (2.3ms)
+  Rendered /Users/earlynovrock/Web/storytime-admin/app/views/admin/application/_flashes.html.haml (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'user5@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)  [["admin", "f"], ["created_at", "2015-03-04 16:21:56.488529"], ["email", "user5@example.com"], ["encrypted_password", "$2a$04$k8LUN.NwIfQCDMzLLLGVfOevETONaca5FpDHxJTSlEyGWbXwDoZVC"], ["updated_at", "2015-03-04 16:21:56.488529"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/earlynovrock/.rvm/gems/ruby-2.1.2/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered application/_flashes.html.haml (0.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"user5@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user5@example.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-03-04 16:21:56.508215"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-03-04 16:21:56.508215"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-04 16:21:56.508951"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.9ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "widgets" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."], ["created_at", "2015-03-04 16:21:56.518793"], ["title", "Widget 6"], ["updated_at", "2015-03-04 16:21:56.518793"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/widgets" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::WidgetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Filter chain halted as :ensure_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-03-04 10:21:56 -0600
+Processing by Admin::HomeController#index as HTML
+  Rendered admin/home/index.html.erb within layouts/application (0.0ms)
+  Rendered application/_flashes.html.haml (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  rollback transaction

@@ -3,7 +3,3 @@ Rails.application.routes.draw do
   devise_for :users
   mount Admin::Engine => "/admin"
 end
-
-Admin::Engine.routes.draw do
-  resources :widgets
-end
