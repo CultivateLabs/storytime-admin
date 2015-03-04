@@ -9,7 +9,7 @@ PATH
       jquery-rails (>= 3.0)
       kaminari
       leather
-      rails (~> 4.1.1)
+      rails (~> 4.0)
       sass-rails (>= 4.0)
       simple_form
 
