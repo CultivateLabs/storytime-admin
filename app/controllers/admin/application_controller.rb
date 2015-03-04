@@ -1,7 +1,7 @@
 module Admin
-  class ApplicationController < ::ApplicationController
-    layout Admin.layout
-    
+  class ApplicationController < Storytime::DashboardController
+    # layout Admin.layout
+
     append_view_path [Rails.root.join("app", "views", "admin"), Admin::Engine.root.join("app", "views", "admin")]
 
     before_action :authenticate_user!
