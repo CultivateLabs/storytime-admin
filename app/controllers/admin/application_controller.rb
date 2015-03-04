@@ -1,7 +1,7 @@
 module Admin
-  class ApplicationController < ::ApplicationController
+  class ApplicationController < Admin.base_controller
     layout Admin.layout
-    
+
     append_view_path [Rails.root.join("app", "views", "admin"), Admin::Engine.root.join("app", "views", "admin")]
 
     before_action :authenticate_user!
