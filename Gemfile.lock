@@ -4,7 +4,6 @@ PATH
     storytime-admin (0.0.1)
       bootstrap-kaminari-views
       coffee-rails (>= 4.0)
-      devise
       font-awesome-sass
       haml-rails
       jquery-rails (>= 3.0)
@@ -224,6 +223,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  devise
   factory_girl_rails
   poltergeist (~> 1.5)
   pry-nav

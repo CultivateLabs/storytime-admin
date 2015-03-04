@@ -107,5 +107,11 @@ module Admin
     def admin_controller?
       true
     end
+
+    if Admin.user_class_symbol != :user
+      def current_user
+        send("current_#{Admin.user_class_underscore_all}".to_sym)
+      end
+    end
   end
 end
