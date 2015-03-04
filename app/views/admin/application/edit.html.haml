@@ -1,0 +1,14 @@
+%header.header-fixed
+  .container-fluid
+    .row
+      .col-xs-6
+        %h1 Edit #{model_name}
+      .col-xs-6
+        = link_to "Cancel", model, class: "btn btn-default pull-right"
+
+.container-fluid.content-padding
+  .row
+    .col-md-8.col-sm-10
+      = render "form"
+    .col-md-4.col-sm-2
+      = yield :admin_right

@@ -1,0 +1,16 @@
+Description:
+    Explain the generator
+
+Example:
+    rails generate admin:resource Thing
+
+    This will create:
+        app/controllers/admin/things_controller.rb
+        app/views/admin/things/_fields.html.haml
+        app/views/admin/things/_row.html.haml
+
+        in config/routes.rb
+        resources :things
+
+        in app/views/admin/application/_links.html.haml
+        = nav_item icon("comment-o", "Things"), Thing, nav_id: [:admin, :things]

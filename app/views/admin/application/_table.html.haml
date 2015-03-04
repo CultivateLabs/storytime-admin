@@ -1,0 +1,8 @@
+%table.table.table-striped.table-admin
+  %thead
+    %tr
+      - headers.each do |text|
+        %th= text
+      %th Actions
+  %tbody
+    = render partial: 'object', collection: @collection, as: :object
