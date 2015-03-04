@@ -3,12 +3,8 @@ module Admin
     set_tab :admin, :widgets
 
   private
-    def permitted_params
-      params.require(:widget).permit(:title, :content)
-    end
-
-    def headers
-      ["Title", "Content"]
-    end
+    # def permitted_params
+    #   params.require(:widget).permit(:title)
+    # end
   end
 end
