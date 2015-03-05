@@ -1,7 +1,7 @@
-%table.table.table-striped.table-admin
+%table.table.table-hover.table-admin
   %thead
     %tr
       = render "headers"
-      %th Actions
+      %th.text-right Actions
   %tbody
     = render partial: 'object', collection: @collection, as: :object

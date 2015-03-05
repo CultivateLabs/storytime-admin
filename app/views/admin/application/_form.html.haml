@@ -1,5 +1,5 @@
 = simple_form_for @model do |f|
   = f.error_notification
   = render 'fields', f: f
-  = f.submit class: "btn btn-primary"
+  = f.submit "Save", class: "btn btn-primary btn-outline"
   = link_to "Cancel", model, class: "btn btn-link"
