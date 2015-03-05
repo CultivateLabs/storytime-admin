@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "admin/version"
+require "storytime_admin/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "storytime-admin"
-  s.version     = Admin::VERSION
+  s.version     = StorytimeAdmin::VERSION
   s.authors     = ["David Van Der Beek"]
   s.email       = ["david@flyoverworks.com"]
   s.homepage    = "http://www.github.com/flyoverworks/storytime-admin"

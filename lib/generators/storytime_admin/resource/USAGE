@@ -1,0 +1,8 @@
+Description:
+    Explain the generator
+
+Example:
+    rails generate storytime_admin:resource Thing
+
+    This will create:
+        app/controllers/storytime_admin/things_controller.rb

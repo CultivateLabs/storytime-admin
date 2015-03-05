@@ -14,7 +14,7 @@ describe "Admin", type: :feature do
       it "shows a list of widgets" do
         3.times { create(:widget) }
 
-        visit admin.widgets_path
+        visit storytime_admin.widgets_path
 
         Widget.all.each do |widget|
           expect(page).to have_content widget.title
@@ -22,11 +22,11 @@ describe "Admin", type: :feature do
       end
 
       it "creates a widget" do
-        visit admin.new_widget_path
+        visit storytime_admin.new_widget_path
 
         fill_in "widget_title", with: "Title"
         fill_in "widget_content", with: "Lorizzle go to hizzle dolor its fo rizzle amizzle, consectetuer adipiscing elit. Nullam sapien velit, my shizz volutpat, suscipit shizzle my nizzle crocodizzle, check it out vel, arcu. Pellentesque egizzle ghetto. Sed that's the shizzle. Fusce at dolizzle dapibus we gonna chung tempizzle yippiyo. Maurizzle pellentesque nibh et turpis. Boom shackalack in tortizzle. Mah nizzle eleifend rhoncizzle nisi. In hac crunk platea dictumst. Shiznit dapibus. Shiznit uhuh ... yih! pizzle, pretizzle dawg, mattizzle mofo, eleifend vitae, nunc. Gangsta suscipizzle. You son of a bizzle check it out fizzle sheezy ass."
-        click_button "Create"
+        click_button "Save"
 
         expect(page).to have_content "success"
       end
@@ -34,9 +34,9 @@ describe "Admin", type: :feature do
       it "edits a widget" do
         widget = create :widget
 
-        visit admin.edit_widget_path(widget)
+        visit storytime_admin.edit_widget_path(widget)
         fill_in "widget_title", with: "New Title"
-        click_button "Update"
+        click_button "Save"
 
         widget.reload
         expect(widget.title).to eq "New Title"
@@ -45,7 +45,7 @@ describe "Admin", type: :feature do
       it "deletes a widget" do
         widget = create :widget
 
-        visit admin.widgets_path
+        visit storytime_admin.widgets_path
         click_link "delete_widget_#{widget.id}"
 
         expect(page).not_to have_content widget.title
@@ -66,7 +66,7 @@ describe "Admin", type: :feature do
       it "redirects to root" do
         create(:widget)
 
-        visit admin.widgets_path
+        visit storytime_admin.widgets_path
 
         expect(page).to have_content "Only admin users can access this page"
       end

@@ -1,9 +1,9 @@
-module Admin
+module StorytimeAdmin
   class ResourceGenerator < Rails::Generators::NamedBase
     source_root File.expand_path('../templates', __FILE__)
 
     def generate_controller
-      template 'controller.rb', "app/controllers/admin/#{table_name}_controller.rb"
+      template 'controller.rb', "app/controllers/storytime_admin/#{table_name}_controller.rb"
     end
 
   private

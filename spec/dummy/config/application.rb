@@ -9,7 +9,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require "admin"
+require "storytime_admin"
 
 module Dummy
   class Application < Rails::Application

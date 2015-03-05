@@ -1,6 +1,6 @@
-require "admin/engine"
+require "storytime_admin/engine"
 
-module Admin
+module StorytimeAdmin
   class << self
     mattr_accessor :nav_title, :models, :user_class, :layout, :base_controller
     self.nav_title = "Admin"
@@ -13,7 +13,7 @@ module Admin
   end
 
   def self.models
-    Dir.glob(Rails.root.join("app", "controllers", "admin", "**/*")).map{|controller| controller.split("/").last.split("_controller")[0]}
+    Dir.glob(Rails.root.join("app", "controllers", "storytime_admin", "**/*")).map{|controller| controller.split("/").last.split("_controller")[0]}
   end
 
   def self.user_class

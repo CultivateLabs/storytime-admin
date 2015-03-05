@@ -1,5 +1,5 @@
-module Admin
-  class ApplicationController < Admin.base_controller.constantize
+module StorytimeAdmin
+  class ApplicationController < StorytimeAdmin.base_controller.constantize
     layout :set_layout
 
     before_action :authenticate_user!
@@ -105,10 +105,10 @@ module Admin
     end
 
     def set_layout
-      Admin.layout unless Admin.layout.nil?
+      StorytimeAdmin.layout unless StorytimeAdmin.layout.nil?
     end
 
-    if Admin.user_class_symbol != :user
+    if StorytimeAdmin.user_class_symbol != :user
       def current_user
         send("current_#{Admin.user_class_underscore_all}".to_sym)
       end

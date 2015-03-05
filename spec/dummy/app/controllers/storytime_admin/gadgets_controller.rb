@@ -1,7 +1,7 @@
-module Admin
-  class <%= class_name.pluralize %>Controller < Admin::ApplicationController
+module StorytimeAdmin
+  class GadgetsController < StorytimeAdmin::ApplicationController
     # Set active navigation link
-    set_tab :admin, :<%= class_name.tableize %>
+    set_tab :admin, :gadgets
 
   private
     ##########################################

@@ -1,4 +1,4 @@
-module Admin
+module StorytimeAdmin
   module ApplicationHelper
     def method_missing method, *args, &block
       # puts "LOOKING FOR ROUTES #{method}"

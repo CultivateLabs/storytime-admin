@@ -8,8 +8,8 @@ require 'leather'
 require 'kaminari'
 require 'bootstrap-kaminari-views'
 
-module Admin
+module StorytimeAdmin
   class Engine < ::Rails::Engine
-    isolate_namespace Admin
+    isolate_namespace StorytimeAdmin
   end
 end

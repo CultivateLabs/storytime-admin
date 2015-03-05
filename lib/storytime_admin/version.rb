@@ -1,3 +1,3 @@
-module Admin
+module StorytimeAdmin
   VERSION = "0.0.1"
 end
