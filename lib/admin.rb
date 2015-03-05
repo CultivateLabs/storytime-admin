@@ -4,13 +4,16 @@ module Admin
   class << self
     mattr_accessor :nav_title, :models, :user_class, :layout, :base_controller
     self.nav_title = "Admin"
-    self.models = []
     self.base_controller = "::ApplicationController"
     @@user_class = "User"
   end
 
   def self.configure(&block)
     yield self
+  end
+
+  def self.models
+    Dir.glob(Rails.root.join("app", "controllers", "admin", "**/*")).map{|controller| controller.split("/").last.split("_controller")[0]}
   end
 
   def self.user_class

@@ -89,11 +89,11 @@ module Admin
     end
 
     def model
-      params[:model_name].classify.constantize
+      model_name.classify.constantize
     end
 
     def model_name
-      @model_name ||= params[:model_name].titleize
+      @model_name ||= self.class.name.split("::").last.gsub("Controller", "").singularize
     end
 
     def model_sym
