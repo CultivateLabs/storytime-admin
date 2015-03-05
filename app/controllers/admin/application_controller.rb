@@ -1,13 +1,12 @@
 module Admin
-  class ApplicationController < Admin.base_controller
-    # layout Admin.layout
-    append_view_path [Rails.root.join("app", "views", "admin"), Admin::Engine.root.join("app", "views", "admin")]
+  class ApplicationController < Admin.base_controller.constantize
+    layout :set_layout
 
     before_action :authenticate_user!
     before_action :ensure_admin!
     before_action :load_model, only: [:edit, :update, :destroy]
 
-    helper_method :model, :model_name, :model_sym, :admin_controller?, :headers, :form_attributes, :index_attr
+    helper_method :model, :model_name, :model_sym, :admin_controller?, :headers, :form_attributes, :index_attr, :current_user
 
     def index
       @collection = model.all.page(params[:page]).per(20)
@@ -47,10 +46,6 @@ module Admin
   private
     def permitted_params
       params.require(model_sym).permit(permitted_attributes.map(&:to_sym))
-    end
-
-    def controller_path
-      "admin/#{model_name.tableize.to_sym}"
     end
 
     def ensure_admin!
@@ -107,6 +102,10 @@ module Admin
 
     def admin_controller?
       true
+    end
+
+    def set_layout
+      Admin.layout unless Admin.layout.nil?
     end
 
     if Admin.user_class_symbol != :user

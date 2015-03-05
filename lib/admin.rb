@@ -3,19 +3,14 @@ require "admin/engine"
 module Admin
   class << self
     mattr_accessor :nav_title, :models, :user_class, :layout, :base_controller
-    @@nav_title = "Admin"
-    @@models = []
+    self.nav_title = "Admin"
+    self.models = []
+    self.base_controller = "::ApplicationController"
     @@user_class = "User"
-    @@layout = "application"
-    @@base_controller = "::ApplicationController"
   end
 
   def self.configure(&block)
     yield self
-  end
-
-  def self.base_controller
-    @@base_controller.constantize
   end
 
   def self.user_class

@@ -1,12 +1,10 @@
-%header.header-fixed
-  .container-fluid
-    .row
-      .col-xs-6
-        %h1= model_name.pluralize
-      .col-xs-6
-        = link_to icon("plus", "New #{model_name}"), url_for([:new, model_sym]), class: "btn btn-success pull-right"
-
-.container-fluid
-  = render 'table'
-  
-  = paginate @collection, theme: 'twitter-bootstrap-3'
+#main
+  .scroll-panel
+    .scroll-panel-header
+      = link_to '#', class: "btn btn-default btn-icon pull-left visible-xs visible-sm", data: { toggle: "off-canvas", target: "#dashboard-nav" } do
+        %i.icon-st-icons-st-logo
+      = link_to "New #{model_name}", [:new, model_sym], class: "btn btn-sm btn-primary btn-outline pull-right"
+      %h3.scroll-panel-title= model_name.pluralize
+    .scroll-panel-body
+      = render 'table'
+      = paginate @collection, theme: 'twitter-bootstrap-3'

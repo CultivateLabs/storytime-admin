@@ -1,14 +1,9 @@
-%header.header-fixed
-  .container-fluid
-    .row
-      .col-xs-6
-        %h1 New #{model_name}
-      .col-xs-6
-        = link_to "Cancel", model, class: "btn btn-default pull-right"
-
-.container-fluid.content-padding
-  .row
-    .col-md-8.col-sm-10
+#main
+  .scroll-panel
+    .scroll-panel-header
+      = link_to '#', class: "btn btn-default btn-icon pull-left visible-xs visible-sm", data: { toggle: "off-canvas", target: "#dashboard-nav" } do
+        %i.icon-st-icons-st-logo
+      = link_to "Cancel", model, class: "btn btn-default btn-sm pull-right"
+      %h3.scroll-panel-title New #{model_name}
+    .scroll-panel-body
       = render "form"
-    .col-md-4.col-sm-2
-      = yield :admin_right
