@@ -29,16 +29,16 @@ module StorytimeAdmin
 
     ##########################################
     ### If you are using the default index 
-    ### template, this controls which attribute 
-    ### is used in the table
+    ### template, this controls which attributes 
+    ### are used in the table
     ##########################################
     # def index_attr
     #   if attributes.include?("title")
-    #     "title"
+    #     ["title"]
     #   elsif attributes.include?("name")
-    #     "name"
+    #     ["name"]
     #   else
-    #     "id"
+    #     ["id"]
     #   end
     # end
   end

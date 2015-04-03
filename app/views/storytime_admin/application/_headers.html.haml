@@ -1,1 +1,2 @@
-%th= index_attr.titleize
+- index_attr.each do |attribute|
+  %th= attribute.titleize

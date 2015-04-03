@@ -76,11 +76,11 @@ module StorytimeAdmin
 
     def index_attr
       if attributes.include?("title")
-        "title"
+        ["title"]
       elsif attributes.include?("name")
-        "name"
+        ["name"]
       else
-        "id"
+        ["id"]
       end
     end
 
