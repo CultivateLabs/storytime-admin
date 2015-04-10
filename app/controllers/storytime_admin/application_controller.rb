@@ -6,7 +6,7 @@ module StorytimeAdmin
     before_action :ensure_admin!
     before_action :load_model, only: [:edit, :update, :destroy]
 
-    helper_method :model, :model_name, :model_sym, :admin_controller?, :headers, :form_attributes, :index_attr, :current_user
+    helper_method :model, :model_display_name, :model_display_name_pluralized, :model_name, :model_sym, :admin_controller?, :headers, :form_attributes, :index_attr, :current_user
 
     def index
       @collection = model.all.page(params[:page]).per(20)
@@ -90,6 +90,14 @@ module StorytimeAdmin
 
     def model
       model_name.classify.constantize
+    end
+
+    def model_display_name
+      model_name
+    end
+
+    def model_display_name_pluralized
+      model_name.pluralize
     end
 
     def model_name
