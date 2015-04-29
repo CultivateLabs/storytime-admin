@@ -13,7 +13,11 @@ module StorytimeAdmin
   end
 
   def self.models
-    Dir.glob(Rails.root.join("app", "controllers", "storytime_admin", "**/*")).map{|controller| controller.split("/").last.split("_controller")[0]}
+    @@models ||= begin
+      files = Dir.glob(Rails.root.join("app", "controllers", "storytime_admin", "**/*"))
+      files.select{|val| val.ends_with?("_controller.rb") }
+           .map{|controller| controller.split("storytime_admin").last.gsub("_controller.rb", "").sub("/", "").classify }
+   end
   end
 
   def self.user_class
