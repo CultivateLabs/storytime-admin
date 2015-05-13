@@ -13,7 +13,9 @@ module StorytimeAdmin
                   :current_user, :polymorphic_route_components
 
     def index
-      @collection = model.all.page(params[:page]).per(20)
+      sort_by = set_model_order
+
+      @collection = model.all.order(sort_by).page(params[:page]).per(20)
     end
 
     def new
@@ -110,6 +112,22 @@ module StorytimeAdmin
 
     def model_sym
       @model_sym ||= model.name.underscore.gsub("/", "_").to_sym
+    end
+
+    def set_model_order
+      sort_type = if params[:sort]
+        params[:sort].split('-')[-1]
+      end
+
+      sort_order = if ['asc', 'desc'].include?(sort_type)
+        order_by = params[:sort].split('-')
+        order_by.pop
+        order_by.join('-')
+      else
+        nil
+      end
+
+      "#{sort_order} #{sort_type}" unless sort_order.nil?
     end
 
     def admin_controller?

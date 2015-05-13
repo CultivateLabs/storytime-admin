@@ -1,2 +1,5 @@
 - index_attr.each do |attribute|
-  %th= attribute.titleize
+  %th{:class => "sort_by"}
+    %a{:href => setup_column_sort(attribute.parameterize)}
+      = attribute.titleize
+      = attribute_sort_arrow(attribute.parameterize)
