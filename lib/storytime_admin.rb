@@ -2,10 +2,12 @@ require "storytime_admin/engine"
 
 module StorytimeAdmin
   class << self
-    mattr_accessor :nav_title, :models, :user_class, :layout, :base_controller
+    mattr_accessor :nav_title, :models, :user_class, :layout, :base_controller, :ensure_admin_method, :ensure_admin_scope
     self.nav_title = "Admin"
     self.base_controller = "::ApplicationController"
     @@user_class = "User"
+    self.ensure_admin_method = "admin?"
+    self.ensure_admin_scope = nil
   end
 
   def self.configure(&block)
