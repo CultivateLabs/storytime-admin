@@ -13,5 +13,5 @@
 //= require_self
 //= require jquery
 //= require jquery_ujs
-//= require admin/application
+//= require storytime_admin/application
 //= require_tree .
