@@ -26,18 +26,7 @@ module StorytimeAdmin
     end
 
     def setup_column_sort(attribute)
-      if params[:sort]
-        sort_by = if params[:sort].include?('-asc')
-          "desc"
-        elsif params[:sort].include?('-desc')
-          "asc"
-        else
-          "desc"
-        end
-      else
-        sort_by = "desc"
-      end
-
+      sort_by = (params[:sort] && params[:sort].include?('-desc')) ? "asc" : "desc"
       type = "#{attribute}-#{sort_by}"
 
       "#{url_for params.merge(sort: type, page: nil)}"
