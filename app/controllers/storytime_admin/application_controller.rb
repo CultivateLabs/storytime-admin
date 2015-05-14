@@ -55,8 +55,16 @@ module StorytimeAdmin
     end
 
     def ensure_admin!
-      unless current_user && current_user.storytime_admin?(current_storytime_site)
+      unless current_user && admin_check
         redirect_to main_app.root_url, flash: { error: "Only admin users can access this page" }
+      end
+    end
+
+    def admin_check
+      if StorytimeAdmin.ensure_admin_scope.nil?
+        current_user.send(StorytimeAdmin.ensure_admin_method)
+      else
+        current_user.send(StorytimeAdmin.ensure_admin_method, send(StorytimeAdmin.ensure_admin_scope))
       end
     end
 
