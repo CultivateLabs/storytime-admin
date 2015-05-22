@@ -25,25 +25,16 @@ module StorytimeAdmin
       end
     end
 
-    def setup_column_sort(attribute)
-      sort_by = (params[:sort] && params[:sort].include?('-desc')) ? "asc" : "desc"
-      type = "#{attribute}-#{sort_by}"
-
-      "#{url_for params.merge(sort: type, page: nil)}"
-    end
-
-    def attribute_sort_arrow(attribute)
-      if params[:sort] && params[:sort].include?(attribute)
-        if params[:sort].include?('-asc')
-          sort_parameter = params[:sort].sub('-asc', '')
-
-          icon("caret-up") if sort_parameter == attribute
-        elsif params[:sort].include?('-desc')
-          sort_parameter = params[:sort].sub('-desc', '')
-
-          icon("caret-down") if sort_parameter == attribute
-        end
+    def sortable(column, title=nil)
+      title ||= column.titleize
+      direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
+      direction_arrow = if column == sort_column
+        direction == "asc" ? icon("caret-up") : icon("caret-down")
+      else 
+        nil
       end
+
+      link_to "#{title} #{direction_arrow}".html_safe, {:sort => column, :direction => direction}
     end
   end
 end

@@ -9,13 +9,11 @@ module StorytimeAdmin
     before_action :load_model, only: [:edit, :update, :destroy]
 
     helper_method :model, :model_display_name, :model_display_name_pluralized, :model_name, 
-                  :model_sym, :admin_controller?, :headers, :form_attributes, :index_attr, 
-                  :current_user, :polymorphic_route_components
+                  :model_sym, :sort_column, :sort_direction,  :admin_controller?, :headers,
+                  :form_attributes, :index_attr, :current_user, :polymorphic_route_components
 
     def index
-      sort_by = set_model_order
-
-      @collection = model.all.order(sort_by).page(params[:page]).per(20)
+      @collection = model.all.order("#{sort_column} #{sort_direction}").page(params[:page]).per(20)
     end
 
     def new
@@ -122,20 +120,12 @@ module StorytimeAdmin
       @model_sym ||= model.name.underscore.gsub("/", "_").to_sym
     end
 
-    def set_model_order
-      sort_type = if params[:sort]
-        params[:sort].split('-')[-1]
-      end
+    def sort_column
+      model.column_names.include?(params[:sort]) ? params[:sort] : "#{model_name.underscore.pluralize}.id"
+    end
 
-      sort_order = if ['asc', 'desc'].include?(sort_type)
-        order_by = params[:sort].split('-')
-        order_by.pop
-        order_by.join('-')
-      else
-        nil
-      end
-
-      "#{sort_order} #{sort_type}" unless sort_order.nil?
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
     def admin_controller?
