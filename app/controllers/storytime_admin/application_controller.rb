@@ -9,11 +9,11 @@ module StorytimeAdmin
     before_action :load_model, only: [:edit, :update, :destroy]
 
     helper_method :model, :model_display_name, :model_display_name_pluralized, :model_name, 
-                  :model_sym, :admin_controller?, :headers, :form_attributes, :index_attr, 
-                  :current_user, :polymorphic_route_components
+                  :model_sym, :sort_column, :sort_direction,  :admin_controller?, :headers,
+                  :form_attributes, :index_attr, :current_user, :polymorphic_route_components
 
     def index
-      @collection = model.all.page(params[:page]).per(20)
+      @collection = model.all.order("#{sort_column} #{sort_direction}").page(params[:page]).per(20)
     end
 
     def new
@@ -118,6 +118,14 @@ module StorytimeAdmin
 
     def model_sym
       @model_sym ||= model.name.underscore.gsub("/", "_").to_sym
+    end
+
+    def sort_column
+      model.column_names.include?(params[:sort]) ? params[:sort] : "#{model_name.underscore.pluralize}.id"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
     def admin_controller?

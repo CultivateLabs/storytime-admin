@@ -24,5 +24,17 @@ module StorytimeAdmin
         super
       end
     end
+
+    def sortable(column, title=nil)
+      title ||= column.titleize
+      direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
+      direction_arrow = if column == sort_column
+        direction == "asc" ? icon("caret-up") : icon("caret-down")
+      else 
+        nil
+      end
+
+      link_to "#{title} #{direction_arrow}".html_safe, {:sort => column, :direction => direction}
+    end
   end
 end
