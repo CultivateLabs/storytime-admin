@@ -21,6 +21,18 @@ describe "Admin", type: :feature do
         end
       end
 
+      it "sorts a list of widgets" do
+        5.times { create(:widget) }
+
+        visit storytime_admin.widgets_path
+
+        original_order = Widget.all.order('id asc')
+
+        page.all("tbody tr.table-row-link").each_with_index do |elem, index|
+          expect(elem['data-url']).to have_content("/widgets/#{original_order[index].id}/edit")
+        end
+      end
+
       it "creates a widget" do
         visit storytime_admin.new_widget_path
 
