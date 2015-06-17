@@ -7,6 +7,7 @@ require 'simple_form'
 require 'leather'
 require 'kaminari'
 require 'bootstrap-kaminari-views'
+require 'storytime_admin/to_csv'
 require 'csv'
 
 module StorytimeAdmin
