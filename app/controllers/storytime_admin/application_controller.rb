@@ -13,7 +13,13 @@ module StorytimeAdmin
                   :form_attributes, :index_attr, :current_user, :polymorphic_route_components
 
     def index
-      @collection = model.all.order("#{sort_column} #{sort_direction}").page(params[:page]).per(20)
+      @collection_before_pagination = model.all.order("#{sort_column} #{sort_direction}")
+      @collection = @collection_before_pagination.page(params[:page]).per(20)
+
+      respond_to do |format|
+        format.html
+        format.csv { send_data @collection_before_pagination.to_csv, filename: "#{model_name.underscore.pluralize}-#{Date.today}.csv" }
+      end
     end
 
     def new

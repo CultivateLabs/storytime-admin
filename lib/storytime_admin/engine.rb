@@ -7,6 +7,7 @@ require 'simple_form'
 require 'leather'
 require 'kaminari'
 require 'bootstrap-kaminari-views'
+require 'csv'
 
 module StorytimeAdmin
   class Engine < ::Rails::Engine

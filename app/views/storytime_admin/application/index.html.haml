@@ -8,3 +8,4 @@
     .scroll-panel-body
       = render 'table'
       = paginate @collection, theme: 'twitter-bootstrap-3'
+      %p= link_to "Download CSV", [storytime_admin, model, format: :csv]
