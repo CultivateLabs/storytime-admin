@@ -11,7 +11,7 @@ module StorytimeAdmin
         CSV.generate(headers: true) do |csv|
           csv << self.csv_columns
           all.each do |record|
-            csv << record.attributes.values_at(*self.csv_columns)
+            csv << attributes.map{ |attr| record.send(attr) }
           end
         end
       end
