@@ -13,7 +13,7 @@ module StorytimeAdmin
                   :form_attributes, :index_attr, :current_user, :polymorphic_route_components
 
     def index
-      @collection_before_pagination = model.all
+      @collection_before_pagination = model.scoped
       @collection_before_pagination = @collection_before_pagination.where("#{search_keys.join(' ILIKE :q OR ')} ILIKE :q", q: "%#{params[:search]}%") if search_keys.length > 0 && params[:search].present?
       yield @collection_before_pagination if block_given?
       @collection_before_pagination = @collection_before_pagination.order("#{sort_column} #{sort_direction}")

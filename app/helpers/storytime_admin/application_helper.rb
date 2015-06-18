@@ -34,7 +34,7 @@ module StorytimeAdmin
         nil
       end
 
-      link_to "#{title} #{direction_arrow}".html_safe, {:sort => column, :direction => direction}
+      link_to "#{title} #{direction_arrow}".html_safe, params.merge(sort: column, direction: direction, page: nil)
     end
   end
 end

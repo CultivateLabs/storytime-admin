@@ -1,0 +1,6 @@
+= form_tag [model], method: :get, class: "form-inline" do
+  = hidden_field_tag :direction, params[:direction] if params[:direction].present?
+  = hidden_field_tag :sort, params[:sort] if params[:sort].present?
+  .form-group
+    = text_field_tag :search, params[:search], class: 'form-control input-sm'
+  = submit_tag "Search", name: nil, class: "btn btn-primary btn-sm btn-outline"
