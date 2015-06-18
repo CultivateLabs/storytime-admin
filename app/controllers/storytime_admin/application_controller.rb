@@ -13,7 +13,9 @@ module StorytimeAdmin
                   :form_attributes, :index_attr, :current_user, :polymorphic_route_components
 
     def index
-      @collection_before_pagination = model.all.order("#{sort_column} #{sort_direction}")
+      @collection_before_pagination = model.all
+      yield @collection_before_pagination if block_given?
+      @collection_before_pagination = @collection_before_pagination.order("#{sort_column} #{sort_direction}")
       @collection = @collection_before_pagination.page(params[:page]).per(20)
 
       respond_to do |format|
@@ -94,11 +96,11 @@ module StorytimeAdmin
 
     def index_attr
       if attributes.include?("title")
-        ["title"]
+        { "title" => "title" }
       elsif attributes.include?("name")
-        ["name"]
+        { "name" => "name" }
       else
-        ["id"]
+        { "id" => "id" }
       end
     end
 
@@ -127,7 +129,7 @@ module StorytimeAdmin
     end
 
     def sort_column
-      model.column_names.include?(params[:sort]) ? params[:sort] : "#{model_name.underscore.pluralize}.id"
+      params[:sort] || "id"
     end
 
     def sort_direction

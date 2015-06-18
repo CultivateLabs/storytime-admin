@@ -1,3 +1,3 @@
-- index_attr.each do |attribute|
+- index_attr.each do |sort, attribute|
   %th{:class => "sort_by"}
-    = sortable(attribute.parameterize)
+    = sortable(sort, attribute.titleize)

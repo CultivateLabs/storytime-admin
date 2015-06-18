@@ -3,7 +3,10 @@ module StorytimeAdmin
     private
 
       def index_attr
-        ["id", "title"]
+        {
+          "id" => "id",
+          "title" => "title"
+        }
       end
   end
 end
