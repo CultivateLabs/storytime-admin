@@ -14,6 +14,7 @@ module StorytimeAdmin
 
     def index
       @collection_before_pagination = model.all
+      @collection_before_pagination = @collection_before_pagination.where("#{search_keys.join(' ILIKE :q OR ')} ILIKE :q", q: "%#{params[:search]}%") if search_keys.length > 0 && params[:search].present?
       yield @collection_before_pagination if block_given?
       @collection_before_pagination = @collection_before_pagination.order("#{sort_column} #{sort_direction}")
       @collection = @collection_before_pagination.page(params[:page]).per(20)
@@ -129,11 +130,15 @@ module StorytimeAdmin
     end
 
     def sort_column
-      params[:sort] || "id"
+      params[:sort] || "#{model.name.tableize}.id"
     end
 
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+
+    def search_keys
+      []
     end
 
     def admin_controller?
