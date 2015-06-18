@@ -10,7 +10,7 @@ module StorytimeAdmin
 
     helper_method :model, :model_display_name, :model_display_name_pluralized, :model_name, 
                   :model_sym, :sort_column, :sort_direction,  :admin_controller?, :headers,
-                  :form_attributes, :index_attr, :current_user, :polymorphic_route_components
+                  :form_attributes, :index_attr, :current_user, :polymorphic_route_components, :search_keys
 
     def index
       @collection_before_pagination = model.scoped
