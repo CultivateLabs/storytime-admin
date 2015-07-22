@@ -1,2 +1,5 @@
 - form_attributes.each do |attribute|
-  = f.input attribute.to_sym
+  - if has_many_association?(model, attribute.to_sym)
+    = f.association attribute.to_sym
+  - else
+    = f.input attribute.to_sym

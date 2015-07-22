@@ -232,3 +232,6 @@ DEPENDENCIES
   rspec-rails
   sqlite3
   storytime-admin!
+
+BUNDLED WITH
+   1.10.2

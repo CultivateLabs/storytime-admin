@@ -30,11 +30,15 @@ module StorytimeAdmin
       direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
       direction_arrow = if column == sort_column
         direction == "asc" ? icon("caret-up") : icon("caret-down")
-      else 
+      else
         nil
       end
 
       link_to "#{title} #{direction_arrow}".html_safe, params.merge(sort: column, direction: direction, page: nil)
+    end
+
+    def has_many_association?(model, attribute)
+      model.reflect_on_all_associations(:has_many).map(&:name).include?(attribute)
     end
   end
 end
