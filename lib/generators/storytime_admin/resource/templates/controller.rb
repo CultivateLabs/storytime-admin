@@ -55,7 +55,7 @@ module StorytimeAdmin
     ### assocations to be included in the form
     # ##########################################
     # def form_attributes
-    #   @form_attributes ||= super + ["ingredient_categories"]
+    #   @form_attributes ||= super + ["associated_model"]
     # end
   end
 end
