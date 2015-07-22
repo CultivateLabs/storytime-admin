@@ -8,12 +8,12 @@ module StorytimeAdmin
     before_action :ensure_admin!
     before_action :load_model, only: [:edit, :update, :destroy]
 
-    helper_method :model, :model_display_name, :model_display_name_pluralized, :model_name, 
+    helper_method :model, :model_display_name, :model_display_name_pluralized, :model_name,
                   :model_sym, :sort_column, :sort_direction,  :admin_controller?, :headers,
                   :form_attributes, :index_attr, :current_user, :polymorphic_route_components, :search_keys
 
     def index
-      @collection_before_pagination = model.scoped
+      @collection_before_pagination = model.all
       @collection_before_pagination = @collection_before_pagination.where("#{search_keys.join(' ILIKE :q OR ')} ILIKE :q", q: "%#{params[:search]}%") if search_keys.length > 0 && params[:search].present?
       yield @collection_before_pagination if block_given?
       @collection_before_pagination = @collection_before_pagination.order("#{sort_column} #{sort_direction}")
@@ -75,7 +75,7 @@ module StorytimeAdmin
       end
     end
 
-    def attributes 
+    def attributes
       @attributes ||= model.columns.map(&:name)
     end
 

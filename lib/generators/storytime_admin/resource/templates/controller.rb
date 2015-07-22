@@ -12,7 +12,7 @@ module StorytimeAdmin
     # end
 
     ##########################################
-    ### Add attributes here to exclude them 
+    ### Add attributes here to exclude them
     ### from permitted_params
     ##########################################
     # def permitted_params_blacklist
@@ -20,7 +20,7 @@ module StorytimeAdmin
     # end
 
     ##########################################
-    ### Add attributes here to use the default 
+    ### Add attributes here to use the default
     ### form but exclude additional attributes
     ##########################################
     # def form_blacklist
@@ -28,18 +28,26 @@ module StorytimeAdmin
     # end
 
     ##########################################
-    ### If you are using the default index 
-    ### template, this controls which attributes 
+    ### If you are using the default index
+    ### template, this controls which attributes
     ### are used in the table
     ##########################################
     # def index_attr
     #   if attributes.include?("title")
-    #     ["title"]
+    #     { "title" => "title" }
     #   elsif attributes.include?("name")
-    #     ["name"]
+    #     { "name" => "name" }
     #   else
-    #     ["id"]
+    #     { "id" => "id" }
     #   end
+    # end
+
+    ##########################################
+    ### Add attributes here to be able to
+    ### search by
+    ##########################################
+    # def search_keys
+    #   ["name"]
     # end
   end
 end
