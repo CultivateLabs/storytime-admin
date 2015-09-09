@@ -1,2 +1,2 @@
 $ ->
-  $("select[multiple='multiple']").chosen()
+  $("[data-controller^='StorytimeAdmin::'] select[multiple='multiple']").chosen()
