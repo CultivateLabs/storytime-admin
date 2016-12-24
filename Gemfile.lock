@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/CultivateLabs/leather.git
+  revision: 184652b03b02d6691c1538e770624c634499a554
+  branch: master
+  specs:
+    leather (3.5.2)
+      bootstrap-sass (~> 3.3.7)
+      devise
+      haml-rails
+      high_voltage
+      rails (>= 4.0, < 5.1)
+
 PATH
   remote: .
   specs:
@@ -43,7 +55,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (6.3.7)
+    autoprefixer-rails (6.6.0)
       execjs
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -51,7 +63,7 @@ GEM
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
-    bootstrap-sass (3.3.6)
+    bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
@@ -111,12 +123,6 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    leather (3.5.1)
-      bootstrap-sass (~> 3.3.5)
-      devise
-      haml-rails
-      high_voltage
-      rails (>= 4.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -223,6 +229,7 @@ DEPENDENCIES
   capybara
   devise
   factory_girl_rails
+  leather!
   poltergeist (~> 1.5)
   pry-nav
   pry-stack_explorer

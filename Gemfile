@@ -12,3 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'leather', github: 'CultivateLabs/leather', branch: 'master'
