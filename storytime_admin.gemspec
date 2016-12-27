@@ -19,13 +19,13 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", '>= 4.0', '< 5.1'
   s.add_dependency "kaminari"
   s.add_dependency "bootstrap-kaminari-views"
-  s.add_dependency "coffee-rails", ">= 4.0", "< 4.2"
-  s.add_dependency "jquery-rails", ">= 3.0", "< 4.2"
+  s.add_dependency "coffee-rails", ">= 4.0"
+  s.add_dependency "jquery-rails", ">= 3.0"
   s.add_dependency "haml-rails"
   s.add_dependency "leather"
-  s.add_dependency "sass-rails", ">= 4.0", "<= 5.0.6"
-  s.add_dependency "font-awesome-sass"
-  s.add_dependency "simple_form"
+  s.add_dependency "sass-rails", ">= 4.0"
+  s.add_dependency "font-awesome-sass", ">= 4.0.3"
+  s.add_dependency "simple_form", ">= 3.0"
 
   s.add_development_dependency "devise"
   s.add_development_dependency "sqlite3"
