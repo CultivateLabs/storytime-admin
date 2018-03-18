@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    storytime-admin (0.2.3)
+    storytime-admin (0.2.4)
       bootstrap-kaminari-views
       coffee-rails (>= 4.0)
       font-awesome-sass (>= 4.0.3)
