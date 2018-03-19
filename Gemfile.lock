@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    storytime-admin (0.2.4)
+    storytime-admin (0.2.5)
       bootstrap-kaminari-views
       coffee-rails (>= 4.0)
       font-awesome-sass (>= 4.0.3)
